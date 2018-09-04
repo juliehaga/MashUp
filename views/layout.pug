@@ -1,0 +1,23 @@
+doctype html
+html
+  head
+    block head
+    title Outdoor Activities
+    //vet egentlig ikke helt hva denne link greiene gjør
+
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+  body
+    div(id='wrapper')
+      block nav
+        nav.header-menu.pure-menu.pure-menu-horizontal
+          a.pure-menu-heading.pure-menu-selected(href="/") HOME
+          ul.pure-menu-list
+            li.pure-menu-item
+              a.pure-menu-link(href="/find-activity") Find a activity
+            li.pure-menu-item
+              a.pure-menu-link(href="/about") About
+      div(id='content')
+        block content
+      footer.footer.l-box.is-center
+        p Julie Haga | n10320008
