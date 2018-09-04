@@ -3,18 +3,24 @@ html
   head
     block head
     title Outdoor Activities
-    //vet egentlig ikke helt hva denne link greiene gjør
+
+
 
     link(rel='stylesheet', href='/stylesheets/style.css')
 
+    link(rel="icon" href="favicon.ico" type="image/x-icon")
+    
+
   body
+
+
     div(id='wrapper')
       block nav
         nav.header-menu.pure-menu.pure-menu-horizontal
-          a.pure-menu-heading.pure-menu-selected(href="/") HOME
+          a.pure-menu-heading.pure-menu-selected(href="/") Home
           ul.pure-menu-list
             li.pure-menu-item
-              a.pure-menu-link(href="/find-activity") Find a activity
+              a.pure-menu-link(href="/find-activities") Find activity
             li.pure-menu-item
               a.pure-menu-link(href="/about") About
       div(id='content')

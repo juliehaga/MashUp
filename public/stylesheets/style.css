@@ -116,7 +116,7 @@ footer {
 header {
   background: rgba(67, 110, 107, 0.8);
   margin: 0;
-  padding: 5% 2%;
+  padding: 15% 20%;
   text-align: center;
   color: white;
 }
@@ -195,9 +195,17 @@ header a:hover {
 }
 
 .about {
-  text-align: center;
+  text-align: left;
   color: black;
 }
+
+.about-title {
+  text-align: left;
+  margin-bottom: 5px;
+  padding: 4px;
+}
+
+
 
 .map-wrapper {
   height: 100%;
