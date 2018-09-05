@@ -12,7 +12,7 @@ block append content
                 form(name ='user-input', method = 'post', action='/user-input')
                     | Location:
                     br
-                    select(name='location')
+                    select(id='location', name='location', onchange='locationUpdate(this)')
                         option(value='automatic') My location
                         option(value='manual') Choose different location
                     br
@@ -37,13 +37,15 @@ block append content
                     br
                     br
                     input(type='submit', value='Submit')
+                div(id="auto-wrapper")
+                    h3 Tester
             div.map-wrapper
                 h3 Inni map
 
                 #map
 
 
-        script(src = "javascripts/getLocation.js")
+        script(src = "javascripts/googleMapsFunc.js")
         script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDhSugVEeZX0fAPoffFbBz19bGPhR2swmY&callback=initMap', async='', defer='')
 
 

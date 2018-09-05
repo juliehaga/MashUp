@@ -36,7 +36,6 @@ router.post('/user-input', function(req, res){
     //JSON.stringify
 
     trailAPI.trailAPIRequest(inputInfo).then(function whenOk(response) {
-        console.log(response)
         response = JSON.stringify(response)
         res.render('results', {trailresult: response });
         })

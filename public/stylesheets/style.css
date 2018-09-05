@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6, label {
   margin: 10px auto;
   padding: 5px;
   max-width: 1200px;
-  background: #ec22ff;
+  background: #fffa54;
 }
 
 /* This is the class used for the footer */
@@ -241,21 +241,19 @@ header a:hover {
 
 
 
-.waiting {
-  margin: 20px auto 50px auto;
-}
-
 .directions{
   visibility: collapse;
 }
 
 #manual-wrapper label {
-  with: 5em;
+  width: 5em;
+  background: #fff424;
 }
 
 #auto-wrapper, #manual-wrapper {
   margin: auto;
   display: none;
+  background: #73C8A9;
 }
 
 #manual-wrapper {
