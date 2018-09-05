@@ -5,10 +5,29 @@ Assignment1 in CAB432
 /////TRAILAPI
 
 https://market.mashape.com/trailapi/trailapi
- [hiking, mountain biking, camping, caving, trail running, snow sports, atv, or horseback riding]
+{ locationOption: 'automatic',
+  street: '',
+  city: '',
+  zip: '',
+  country: '',
+  radius: '50',
+  activityType: 'hiking',
+  noResults: '20',
+  goodWeather: 'on' }
+
+
+inputInfo.lat,
+inputInfo.limit,
+inputInfo.lon,
+inputInfo.activities,
+inputInfo.city,
+inputInfo.country,
+inputInfo.radius
 
 
 //et element ser slik ut.
+
+
 
 
 { city: 'Noosa',
@@ -36,3 +55,5 @@ https://darksky.net/dev/docs
 /////GOOGLE
 
 AIzaSyDhSugVEeZX0fAPoffFbBz19bGPhR2swmY
+
+https://developers.google.com/maps/documentation/geocoding/intro#place-id

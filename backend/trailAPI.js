@@ -5,8 +5,7 @@ var unirest = require('unirest');
 function constructTrailQuery(inputs) {
     let query = "";
     let queryParamaters = ["lat","&limit", "&lon", "&q-activities_activity_type_name_eq", "&q-city_cont", "&q-country_cont", "&radius" ]
-    console.log("Input lengde: ");
-    console.log(inputs.length);
+
 
     if (inputs.length <= 0) {
         return new Error("No inputs argument passed to trailAPI");
@@ -22,7 +21,6 @@ function constructTrailQuery(inputs) {
 var constructTrailAPIRequestURL = function (lat, limit, lon, activity_type, city, country, radius) {
     let inputs = [lat, limit, lon, activity_type, city, country, radius];
     var query = constructTrailQuery(inputs);
-    console.log("query" + query);
 
     //check if constructQuery returned an error.
     if (query instanceof Error) {
@@ -42,8 +40,7 @@ exports.trailAPIRequest = function(inputInfo)  {
     return new Promise(function(resolve, reject) {
 
     // These code snippets use an open-source library. http://unirest.io/nodejs
-    console.log("making a search with the following info");
-    console.log(inputInfo)
+
     unirest.get(constructTrailAPIRequestURL(inputInfo.lat, inputInfo.limit, inputInfo.lon, inputInfo.activities, inputInfo.city, inputInfo.country, inputInfo.radius))
         .header("X-Mashape-Key", "JCOm6HzntkmshkTLOE6Omng73CKap1Xh0cdjsnhhOk5IdC253g")
         .header("Accept", "text/plain")

@@ -19,21 +19,24 @@ router.get('/find-activities', function(req, res){
 
 
 router.post('/user-input', function(req, res){
-    console.log(req.body);
     let formData = req.body;
+    console.log("--------------FORMDATA--------------");
+    console.log(formData);
 
-    console.log(formData.noResults);
-    console.log(formData.activityType);
+
     let inputInfo = {
         "lat" : "",
         "limit" : formData.noResults,
         "lon": "",
         "activities": formData.activityType,
-        "city": "",
-        "country": "",
+        "city": formData.city,
+        "country": formData.country,
         "radius": formData.radius,
     };
     //JSON.stringify
+
+
+
 
     trailAPI.trailAPIRequest(inputInfo).then(function whenOk(response) {
         response = JSON.stringify(response)

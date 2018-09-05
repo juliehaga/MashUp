@@ -12,7 +12,7 @@ block append content
                 form(name ='user-input', method = 'post', action='/user-input')
                     | Location:
                     br
-                    select#location(onchange='customizeLocation(this)')
+                    select#location(name = 'locationOption', onchange='customizeLocation(this)')
                         option(value='automatic') My location
                         option(value='customize') Choose different location
                     br
@@ -53,12 +53,17 @@ block append content
                     br
                     input(type='number', name='noResults', value='20')
                     br
-                    div.wrapper
-                        | Only find results with good weather
-                        input(id='goodWeather', type='checkbox', onclick='showGoodWeatherSearch(this);')
+                    | Only show results with good weather
+                    input(type='checkbox', name = 'goodWeather',onclick='showGoodWeatherSearch(this);')
                     br
                     div.toogle-wrapper(id = "toogle-weather")
-                        | Only searching for good weather
+                        | Days from now
+                        select(name='weatherDay')
+                            option(value='1') 1 day
+                            option(value='2') 2 days
+                            option(value='3') 3 days
+                            option(value='4') 4 days
+                            option(value='5') 5 days
                     input(type='submit', value='Submit')
 
 
