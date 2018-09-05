@@ -12,10 +12,28 @@ block append content
                 form(name ='user-input', method = 'post', action='/user-input')
                     | Location:
                     br
-                    select(id='location', name='location', onchange='locationUpdate(this)')
+                    select#location(onchange='customizeLocation(this)')
                         option(value='automatic') My location
-                        option(value='manual') Choose different location
+                        option(value='customize') Choose different location
                     br
+                    div.toogle-wrapper(id = "toogle-location")
+                        br
+                        | Street Adress:
+                        br
+                        input(type='text', name='street')
+                        br
+                        | City:
+                        br
+                        input(type='text', name='city')
+                        br
+                        | Zip/Postal Code:
+                        br
+                        input(type='text', name='zip')
+                        br
+                        | Country:
+                        br
+                        input(type='text', name='country')
+                        br
                     | Radius:
                     br
                     input(type='number', name='radius', value='50')
@@ -35,10 +53,18 @@ block append content
                     br
                     input(type='number', name='noResults', value='20')
                     br
+                    div.wrapper
+                        | Only find results with good weather
+                        input(id='goodWeather', type='checkbox', onclick='showGoodWeatherSearch(this);')
                     br
+                    div.toogle-wrapper(id = "toogle-weather")
+                        | Only searching for good weather
                     input(type='submit', value='Submit')
-                div(id="auto-wrapper")
-                    h3 Tester
+
+
+
+
+
             div.map-wrapper
                 h3 Inni map
 
@@ -46,6 +72,8 @@ block append content
 
 
         script(src = "javascripts/googleMapsFunc.js")
+        script(src = "javascripts/find-activities.js")
+
         script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDhSugVEeZX0fAPoffFbBz19bGPhR2swmY&callback=initMap', async='', defer='')
 
 

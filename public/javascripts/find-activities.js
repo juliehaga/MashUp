@@ -1,10 +1,19 @@
 
-function locationUpdate(selector) {
+function customizeLocation(selector) {
     console.log("kjører location update");
-    if (selector.value === "manual")  {
-        document.getElementById("auto-wrapper").style.display = "none";
+    console.log(selector);
+    if (selector.value === "customize") {
+        document.getElementById("toogle-location").style.display = "block";
     } else {
-        document.getElementById("auto-wrapper").style.display = "block";
+        document.getElementById("toogle-location").style.display = "none";
+    }
+}
+
+
+function showGoodWeatherSearch(checkbox){
+    if (checkbox.value){
+        console.log("Checkbox pushed");
+        document.getElementById("toogle-weather").style.display = "block";
     }
 }
 

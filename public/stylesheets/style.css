@@ -239,6 +239,38 @@ header a:hover {
 
 
 
+.toogle-wrapper{
+  min-width: 300px;
+  background: #fff424;
+  display: none
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 .directions{
@@ -252,7 +284,6 @@ header a:hover {
 
 #auto-wrapper, #manual-wrapper {
   margin: auto;
-  display: none;
   background: #73C8A9;
 }
 
