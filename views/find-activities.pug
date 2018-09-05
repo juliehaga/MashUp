@@ -9,7 +9,7 @@ block append content
         div.flex-containter
             div.form-wrapper
                 h4 Refine search
-                form(action='/userInput')
+                form(name ='user-input', method = 'post', action='/user-input')
                     | Location:
                     br
                     select(name='location')
@@ -22,7 +22,7 @@ block append content
                     br
                     | Activity type:
                     br
-                    select(name='activity_type')
+                    select(name='activityType')
                         option(value='hiking') Hiking
                         option(value='mountainBiking') Mountain biking
                         option(value='camping') Camping
@@ -33,14 +33,10 @@ block append content
                     br
                     | Limit results to:
                     br
-                    input(type='number', name='number of results', value='20')
+                    input(type='number', name='noResults', value='20')
                     br
                     br
                     input(type='submit', value='Submit')
-
-
-
-
             div.map-wrapper
                 h3 Inni map
 

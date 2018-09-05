@@ -21,16 +21,13 @@ function constructTrailQuery(inputs) {
 
 var constructTrailAPIRequestURL = function (lat, limit, lon, activity_type, city, country, radius) {
     let inputs = [lat, limit, lon, activity_type, city, country, radius];
-
-
-    var query = constructQuery(inputs);
+    var query = constructTrailQuery(inputs);
     console.log("query" + query);
 
     //check if constructQuery returned an error.
     if (query instanceof Error) {
         return new Error('Trail API request url could not be constructed', query);
     }
-
     let trailAPIinfo = {
         "hostname" : "https://trailapi-trailapi.p.mashape.com/",
         "path" : "?" + query,
@@ -38,26 +35,32 @@ var constructTrailAPIRequestURL = function (lat, limit, lon, activity_type, city
     return trailAPIinfo.hostname + trailAPIinfo.path;
 }
 
-let inputInfo = {
-    "lat" : "",
-    "limit" : "",
-    "lon": "",
-    "activities": "horse+riding",
-    "city": "",
-    "country": "",
-    "radius": "",
+
+
+
+exports.trailAPIRequest = function(inputInfo)  {
+    return new Promise(function(resolve, reject) {
+
+    // These code snippets use an open-source library. http://unirest.io/nodejs
+    console.log("making a search with the following info");
+    console.log(inputInfo)
+    unirest.get(constructTrailAPIRequestURL(inputInfo.lat, inputInfo.limit, inputInfo.lon, inputInfo.activities, inputInfo.city, inputInfo.country, inputInfo.radius))
+        .header("X-Mashape-Key", "JCOm6HzntkmshkTLOE6Omng73CKap1Xh0cdjsnhhOk5IdC253g")
+        .header("Accept", "text/plain")
+        .end(function (result) {
+            if (result.error) {
+                console.log("TrailAPI call failed")
+                reject(result.error);
+            } else {
+                console.log("TrailAPI call okay");
+                resolve(result.body);
+
+            }
+
+        });
+
+   })
 };
-
-// These code snippets use an open-source library. http://unirest.io/nodejs
-unirest.get(constructTrailAPIRequestURL(inputInfo.lat, inputInfo.limit, inputInfo.lon, inputInfo.activities, inputInfo.city, inputInfo.country, inputInfo.radius))
-    .header("X-Mashape-Key", "JCOm6HzntkmshkTLOE6Omng73CKap1Xh0cdjsnhhOk5IdC253g")
-    .header("Accept", "text/plain")
-    .end(function (result) {
-        //console.log(result.status, result.headers, result.body);
-        //console.log(result.body.places);
-    });
-
-
 
 
 
