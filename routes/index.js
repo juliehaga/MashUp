@@ -17,4 +17,11 @@ router.get('/find-activities', function(req, res){
     res.render('find-activities');
 });
 
+
+router.post('/userInput', function(req, res){
+    console.log("post user info");
+    res.render('about');
+});
+
+
 module.exports = router;

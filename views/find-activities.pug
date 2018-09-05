@@ -8,12 +8,46 @@ block append content
         h1 Browse activities
         div.flex-containter
             div.form-wrapper
-                h3 Inni container
+                h4 Refine search
+                form(action='/userInput')
+                    | Location:
+                    br
+                    select(name='location')
+                        option(value='automatic') My location
+                        option(value='manual') Choose different location
+                    br
+                    | Radius:
+                    br
+                    input(type='number', name='radius', value='50')
+                    br
+                    | Activity type:
+                    br
+                    select(name='activity_type')
+                        option(value='hiking') Hiking
+                        option(value='mountainBiking') Mountain biking
+                        option(value='camping') Camping
+                        option(value='trailRunning') Trail Running
+                        option(value='snow_sports') Snow Sports
+                        option(value='atv') ATV
+                        option(value='horseRiding') Horseback Riding
+                    br
+                    | Limit results to:
+                    br
+                    input(type='number', name='number of results', value='20')
+                    br
+                    br
+                    input(type='submit', value='Submit')
+
+
+
 
             div.map-wrapper
                 h3 Inni map
+
                 #map
 
 
         script(src = "javascripts/getLocation.js")
         script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDhSugVEeZX0fAPoffFbBz19bGPhR2swmY&callback=initMap', async='', defer='')
+
+

@@ -21,7 +21,7 @@ html, body {
 
 body {
   line-height: 1.5em;
-  color: #7f8c8d;
+  color: #245185;
   font-size: 12px;
   min-height: 100%;
 }
@@ -232,7 +232,7 @@ header a:hover {
 
 .form-wrapper {
   width: 100%;
-  text-align: center;
+  text-align: left;
   padding-left: 10px;
   background: #d366cc;
 }
