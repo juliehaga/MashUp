@@ -1,26 +1,19 @@
-doctype html
-html
-    head
-        title Simple Map
-        meta(name='viewport', content='initial-scale=1.0')
-        meta(charset='utf-8')
-        style.
-            #map {
-                height: 100%;
-            }
-            html, body {
-                height: 100%;
-                margin: 0;
-                padding: 0;
-            }
-    body
-        #map
-        script.
-            var map;
-            function initMap() {
-                map = new google.maps.Map(document.getElementById('map'), {
-                    center: {lat: -34.397, lng: 150.644},
-                    zoom: 8
-                });
-            }
+extends layout
+
+block append head
+    link(rel='stylesheet', href='/stylesheets/style.css')
+
+block append content
+    section.map
+        h1 Browse activities
+        div.flex-containter
+            div.form-wrapper
+                h3 Inni container
+
+            div.map-wrapper
+                h3 Inni map
+                #map
+
+
+        script(src = "javascripts/getLocation.js")
         script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDhSugVEeZX0fAPoffFbBz19bGPhR2swmY&callback=initMap', async='', defer='')

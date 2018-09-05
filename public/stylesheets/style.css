@@ -59,7 +59,7 @@ h1, h2, h3, h4, h5, h6, label {
 
 /*
  * -- MENU STYLES --
- * customize how my .pure-menu looks at the top of the page
+ * customize how my .header-menu looks at the top of the page
  */
 
 .header-menu {
@@ -96,9 +96,10 @@ h1, h2, h3, h4, h5, h6, label {
 * -- CONTAINER STYLES --
 */
 .container {
-  margin: 100px auto;
-  padding: 50px;
+  margin: 10px auto;
+  padding: 5px;
   max-width: 1200px;
+  background: #ec22ff;
 }
 
 /* This is the class used for the footer */
@@ -116,7 +117,7 @@ footer {
 header {
   background: rgba(67, 110, 107, 0.8);
   margin: 0;
-  padding: 15% 20%;
+  padding: 15% 10%;
   text-align: center;
   color: white;
 }
@@ -208,10 +209,37 @@ header a:hover {
 
 
 .map-wrapper {
-  height: 100%;
+  width: 100%;
   text-align: center;
-  padding-left: 50px;
+  padding-left: 10px;
+  background: #d32f49;
 }
+
+#map {
+  height: 100%;
+  max-height: 400px;
+  min-height: 300px;
+  max-width: 500px;
+  margin: auto;
+}
+
+
+.flex-containter {
+  display: flex;
+  flex-direction: row;
+  min-height: 500px;
+}
+
+.form-wrapper {
+  width: 100%;
+  text-align: center;
+  padding-left: 10px;
+  background: #d366cc;
+}
+
+
+
+
 
 .waiting {
   margin: 20px auto 50px auto;
@@ -242,13 +270,6 @@ header a:hover {
   display: none;
 }
 
-#map {
-  width: 100%;
-  max-height: 350px;
-  min-height: 200px;
-  max-width: 450px;
-  margin: auto;
-}
 
 #auto-wrapper #map {
   width: 80%;
@@ -492,6 +513,7 @@ header a:hover {
   /* We want to give the content area some more padding */
   .content {
     padding: 1em;
+    background: #1ae52d;
   }
 
   /* We can align the menu header to the left, but float the

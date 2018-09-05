@@ -26,22 +26,8 @@ function getLocationOfUSer() {
 
 
 function initMap() {
-    console.log("init map");
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -34.397, lng: 150.644},
-        zoom: 6
+        zoom: 8
     });
-    updateMap();
 }
-
-function updateMap() {
-    var pos = {
-        lat:-34,
-        lng:153
-    };
-
-    var center = new google.maps.LatLng(pos.lat, pos.lng);
-    google.maps.event.trigger(map, 'resize');
-    map.setCenter(center);
-}
-
