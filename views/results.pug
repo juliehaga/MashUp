@@ -5,4 +5,6 @@ block append head
 
 block append content
     h1 RESULTS
-    p #{trailresult}
+
+    for result in trailresult
+        p #{JSON.stringify(result)}

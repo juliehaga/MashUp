@@ -13,6 +13,9 @@ function initMap() {
             };
 
             //må kunne sende denne posisjonen videre.
+            document.getElementById('lat').value = pos.lat;
+            console.log(pos.lng);
+            document.getElementById('lng').value = pos.lng;
 
             infoWindow.setPosition(pos);
             infoWindow.setContent('Current location');

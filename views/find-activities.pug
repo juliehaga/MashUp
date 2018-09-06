@@ -51,7 +51,7 @@ block append content
                     br
                     | Limit results to:
                     br
-                    input(type='number', name='noResults', value='20')
+                    input(type='number', name='limit', value='20')
                     br
                     | Only show results with good weather
                     input(type='checkbox', name = 'goodWeather',onclick='showGoodWeatherSearch(this);')
@@ -64,6 +64,10 @@ block append content
                             option(value='3') 3 days
                             option(value='4') 4 days
                             option(value='5') 5 days
+                    div.toogle-wrapper
+                        input(type='text', name='lat', id='lat')
+                        input(type='text', name='lng', id='lng')
+
                     input(type='submit', value='Submit')
 
 
