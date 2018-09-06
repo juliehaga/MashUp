@@ -3,6 +3,7 @@ var router = express.Router();
 var trailAPI = require('../backend/trailAPI');
 var darkskyAPI = require('../backend/darkskyAPI');
 var processResults = require('../backend/processResults');
+var geocoding = require('../backend/geocoding');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -22,6 +23,21 @@ router.get('/find-activities', function(req, res){
 
 router.post('/user-input', function(req, res){
     let formData = req.body;
+    console.log(formData);
+    if (formData.locationOption === "customize"){
+        geocoding.findCoordinates(formData.street, formData.city, formData.zip, formData.country).then(function whenOK(coordinates) {
+            console.log("**********************");
+
+            formData.lat = coordinates["results"][0]["geometry"]["location"]["lat"];
+            formData.lng = coordinates["results"][0]["geometry"]["location"]["lng"];
+            console.log(formData);
+        }).catch(function notOK(err) {
+            console.log(err)
+        });
+    }
+    console.log(formData)
+
+
 
     trailAPI.trailAPIRequest(formData).then(function whenOk(response) {
         response = processResults.processRecievedData(JSON.stringify(response));
