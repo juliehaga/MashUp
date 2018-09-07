@@ -43,8 +43,9 @@ router.post('/user-input', function(req, res){
         response = processResults.processRecievedData(JSON.stringify(response));
 
         response = response.filter(function (activity) {
-            console.log(activity.activity);
-            console.log(formData.activityType)
+            console.log("APIdata " + activity.activity);
+            console.log("etterspurt" + formData.activityType)
+            console.log("-------------------------------------------");
             return activity.activity === formData.activityType;
 
         })
