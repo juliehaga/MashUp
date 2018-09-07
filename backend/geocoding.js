@@ -1,8 +1,8 @@
 var unirest = require("unirest");
 //https://developers.google.com/maps/documentation/geocoding/intro#place-id
 
-let constructGeocodeURL = function(street, city, zip, country) {
-    let query = street+"&"+city+"&"+zip+"&"+country;
+let constructGeocodeURL = function(street, suburb, zip, country) {
+    let query = suburb+"&"+street+"&"+zip+"&"+country;
     if (query instanceof Error) {
         return new Error("geocode API request url could not be constructed", query);
     }
