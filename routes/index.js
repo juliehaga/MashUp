@@ -42,6 +42,13 @@ router.post('/user-input', function(req, res){
     trailAPI.trailAPIRequest(formData).then(function whenOk(response) {
         response = processResults.processRecievedData(JSON.stringify(response));
 
+        response = response.filter(function (activity) {
+            console.log(activity.activity);
+            console.log(formData.activityType)
+            return activity.activity === formData.activityType;
+
+        })
+
         let forecastLocations = response.map(function(activity) {
             let location = {"lat": activity.lat, "lng": activity.lng, "time": Math.round(Date.now()/1000) + formData.weatherDay*3600*24};
             return darkskyAPI.darkSkyAPIRequest(location);
