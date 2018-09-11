@@ -1,6 +1,5 @@
-var processRecievedData = function (requestData) {
+var processTrailData = function (requestData) {
     requestData = JSON.parse(requestData);
-
 
 
     let activities = [];
@@ -14,7 +13,7 @@ var processRecievedData = function (requestData) {
                 "activity": requestData["places"][i]["activities"][0]["activity_type_name"],
                 "description": requestData["places"][i]["activities"][0]["description"],
                 "lat": requestData["places"][i]["lat"],
-                "lng": requestData["places"][i]["lon"]
+                "lng": requestData["places"][i]["lon"],
             }
             activities.push(activity);
         }catch(error) {
@@ -30,4 +29,4 @@ var processRecievedData = function (requestData) {
     return activities;
 }
 
-module.exports.processRecievedData = processRecievedData;
+module.exports.processTrailData = processTrailData;

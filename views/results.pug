@@ -4,7 +4,71 @@ block append head
     link(rel='stylesheet', href='/stylesheets/style.css')
 
 block append content
-    h1 RESULTS
 
-    for result in trailresult
-        p #{JSON.stringify(result)}
+
+    h3 Showing results for
+    div.search-result
+        p
+            if formData.locationOption === 'automatic'
+                | Location automatically detected as (#{formData.lat},#{formData.lng}).
+            else
+                | Search location #{formData.street}, #{formData.suburb}, #{formData.country}.
+
+            |Showing results within a radius of #{formData.radius} km.
+            |Activity type: #{formData.activityType}.
+            if formData.goodWeather === 'on'
+                | Only showing results with good weather, #{formData.weatherDay} days from now
+
+    div.flex-containter
+        div.form-wrapper
+            if(trailresult.length === 0)
+                div.no-result
+                    h4 Sorry, there are no results for your search
+                    | må legge til en knapp for å endre søket og søke igjen.
+            else
+
+
+
+                for result in trailresult
+                    #mapcoords(data-lat='-25.363', data-lng='131.044', data-zoom='5')
+                        
+
+                    JSON.stringify(result)
+                    div.title
+                        resultHeader #{result.name}
+                        div.weather-result
+                            | In #{formData.weatherDay} days time:
+                            | &nbsp;#{result.weatherSummary}
+                            br
+                            | Temp:
+                            | &nbsp;#{result.temp}
+
+
+                        div.summary-text
+                            p
+                                span.activity-titles Location:
+                                | &nbsp;#{result.location}
+                            p
+                                span.activity-titles Directions:
+                                | &nbsp;#{result.direction}
+                            p
+                                span.activity-titles Description:
+                                | &nbsp;#{result.description}
+
+
+
+
+
+
+
+
+
+
+        div.map-wrapper
+            h3 Inni map
+            #map
+
+    script(src = "javascripts/results.js")
+    script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDhSugVEeZX0fAPoffFbBz19bGPhR2swmY&callback=drawActivitiesOnMap', async='', defer='')
+
+

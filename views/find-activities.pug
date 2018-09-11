@@ -22,7 +22,7 @@ block append content
                         br
                         input(type='text', name='street')
                         br
-                        | City:
+                        | Suburb:
                         br
                         input(type='text', name='suburb')
                         br
@@ -59,6 +59,7 @@ block append content
                     div.toogle-wrapper(id = "toogle-weather")
                         | Days from now
                         select(name='weatherDay')
+                            option(value='0') today
                             option(value='1') 1 day
                             option(value='2') 2 days
                             option(value='3') 3 days

@@ -40,12 +40,9 @@ router.post('/user-input', function(req, res){
 
 
     trailAPI.trailAPIRequest(formData).then(function whenOk(response) {
-        response = processResults.processRecievedData(JSON.stringify(response));
+        response = processResults.processTrailData(JSON.stringify(response));
 
         response = response.filter(function (activity) {
-            console.log("APIdata " + activity.activity.trim().toLowerCase().replace(/\s+/g, ''));
-            console.log("etterspurt" + formData.activityType)
-            console.log("-------------------------------------------");
             return activity.activity.trim().toLowerCase().replace(/\s+/g, '') === formData.activityType;
 
         })
@@ -59,6 +56,7 @@ router.post('/user-input', function(req, res){
 
             let i = 0;
             trailAndWeatherData = response.map(function (activity) {
+
                 activity.weatherSummary = weatherResults[i]["daily"]["data"][0]["summary"];
                 activity.temp = weatherResults[i]["daily"]["data"][0]["temperatureHigh"];
                 i++;
@@ -74,7 +72,9 @@ router.post('/user-input', function(req, res){
 
                 })
             }
-            res.render('results', {trailresult: trailAndWeatherData});
+
+
+            res.render('results', {trailresult: trailAndWeatherData, formData: formData});
 
         });
 

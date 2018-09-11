@@ -20,8 +20,8 @@ html, body {
 }
 
 body {
-  line-height: 1.5em;
-  color: #245185;
+  line-height: 1em;
+  color: #1a2835;
   font-size: 12px;
   min-height: 100%;
 }
@@ -206,8 +206,6 @@ header a:hover {
   padding: 4px;
 }
 
-
-
 .map-wrapper {
   width: 100%;
   text-align: center;
@@ -234,10 +232,8 @@ header a:hover {
   width: 100%;
   text-align: left;
   padding-left: 10px;
-  background: #d366cc;
+  background: #ffffff;
 }
-
-
 
 .toogle-wrapper{
   min-width: 300px;
@@ -245,287 +241,78 @@ header a:hover {
   display: none
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-.directions{
-  visibility: collapse;
-}
-
-#manual-wrapper label {
-  width: 5em;
-  background: #fff424;
-}
-
-#auto-wrapper, #manual-wrapper {
-  margin: auto;
-  background: #73C8A9;
-}
-
-#manual-wrapper {
-  margin-left: auto;
-}
-
-#auto-wrapper {
-  min-width: 300px;
-}
-
-.weather-day {
-  display: none;
-}
-
-
-#auto-wrapper #map {
-  width: 80%;
-  margin: 0;
-}
-
-#directions {
+.no.result{
   width: 100%;
-  max-height: 350px;
-  min-height: 200px;
-  max-width: 450px;
-  margin: auto;
-  overflow-y: scroll;
+  text-align: center;
+  padding-left: 10px;
+  background: #1a2835;
 }
 
-.more-details-button {
-  color: #34495e;
-  background: none;
-  border: none;
-  line-height: 1.7em;
-  font-size: 20px;
-  border-bottom: solid 2px;
-  padding-bottom: 1px;
-}
-
-.more-details-button:hover {
-  color: #3F853D;
-}
-
-.weather-wrapper {
-  margin: auto;
-  padding-left: 50px;
-}
-
-.result-weather {
-  margin-left: 5%;
-  color: #F5DA47;
-}
-
-.result-weather i {
-  padding: 0 2%;
-}
-
-.activity-list {
-  margin-bottom: 2%;
-}
-
-.place-info {
-  color: #3F853D;
+resultHeader {
+  border-bottom: 2px solid #dedede;
+  font-size: 14px;
   font-weight: bold;
-  text-transform: capitalize;
-}
-
-.activity-list p {
-  margin: 0;
-}
-
-.activity-list ul {
-  padding-left: 0;
-  margin: 0;
-  list-style-type: none;
-}
-
-.activity-list ul li {
   display: inline-block;
-  position: relative;
-  height: 50px;
-  width: 50px;
 }
 
-.activity-list ul li p {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  top: 55px;
-  left: 0;
-  font-size: 0.7em;
-  line-height: 1em;
-  text-align: center;
-  display: none;
-}
 
-.activity-list ul li img {
-  position: absolute;
-  width: 50px;
-  height: 50px;
-  top: 0;
-  left: 0;
-}
-
-.activity-list ul li:hover p {
-  display: block;
-}
-
-.result-summary, .place-details {
-  color: black;
-}
-
-.place-details{
-  max-width: 70%;
-  margin: auto;
-}
-
-.place-details .activity-list {
-  text-align: center;
-}
-
-.place-title {
-  text-align: center;
+.title {
   margin-bottom: 20px;
-  padding: 20px;
 }
 
-/* Style for the links on the place page */
-.place-quicklinks{
-  list-style-type: none;
-}
-
-.place-quicklinks li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.place-quicklinks li a {
-  color: inherit;
-}
-
-/* These are the styles for the weekly forecast section on the place page */
-#weather {
-  overflow-y: scroll;
-}
-
-.weather-day-summary{
-  padding: 10px;
-}
-
-.day-summary {
-  color: #3F853D;
-}
-
-.text-with-icon {
-  margin: 0 10px;
-}
-
-.sunrise {
-  color: #FFC371;
-  border-right: 2px solid #FF916F;
-  padding-right: 10px;
-}
-
-.sunset {
-  color: #FF5F6D;
-  padding-left: 10px;
-}
-
-.min-temp {
-  color: #0B486B;
-  padding-right: 10px;
-}
-
-.max-temp {
-  color: #F56217;
-  padding-left: 10px;
-}
-
-.rain-chance {
-  color: #003973;
-  border-right: 1px solid #1C3A5C;
-}
-
-.wind-speed {
-  color: #373B44;
-  border-right: 1px solid #558277;
-  padding-left: 10px;
-}
-
-.humidity {
-  color: #73C8A9;
-  padding-left: 10px;
-}
-
-/* Styles for Activity info */
-.activity-info-wrapper h4 {
-  text-transform: capitalize;
-}
-
-.activity-info-wrapper h4 {
+.location {
+  border-bottom: 2px solid #dedede;
+  font-size: 14px;
+  font-weight: bold;
   display: inline-block;
 }
 
-.activity-info-wrapper img {
-  display: block;
-  margin: auto;
-  max-width: 80%;
-  padding: 10px;
+.activity-titles {
+    color: #245185;
+    font-weight: bold;
+    text-transform: capitalize;
+    font-size: 12px;
 }
 
-.single-activity {
-  margin: 0 2%;
+.summary-text {
+    color: #000000;
+    font-size: 10px;
 }
 
-.single-activity h4 a {
-  text-decoration: none;
-  color: inherit;
+.weather-result {
+    color: #F5DA47;
+    font-size: 10px;
+    font-weight: bold;
 }
 
-.single-activity h4 a:hover {
-  text-decoration: underline;
+.search-result{
+    color: #6b6b6b;
+    font-size: 11px;
 }
 
-.google-place-details {
-  margin-bottom: 50px;
-}
 
-/* Styles for rating stars */
-.rating-yes{
-  color: #F5DA47;
-}
 
-.review h5{
-  display: inline-block;
-  margin: 0 20px 0 0;
-}
 
-.review p {
-  margin-top: 0;
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
@@ -542,7 +329,7 @@ header a:hover {
   /* We want to give the content area some more padding */
   .content {
     padding: 1em;
-    background: #1ae52d;
+    background: #ffffff;
   }
 
   /* We can align the menu header to the left, but float the
