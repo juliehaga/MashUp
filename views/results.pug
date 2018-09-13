@@ -23,15 +23,14 @@ block append content
         div.form-wrapper
             if(trailresult.length === 0)
                 div.no-result
-                    h4 Sorry, there are no results for your search
-                    | må legge til en knapp for å endre søket og søke igjen.
+                    p Sorry, there are no results for your search
+                    div.search-again-button
+                        a.pure-button(href='/find-activities') Search Again
+
             else
-
-
 
                 for result in trailresult
                     #mapcoords(data-lat='-25.363', data-lng='131.044', data-zoom='5')
-                        
 
                     JSON.stringify(result)
                     div.title
@@ -65,7 +64,6 @@ block append content
 
 
         div.map-wrapper
-            h3 Inni map
             #map
 
     script(src = "javascripts/results.js")

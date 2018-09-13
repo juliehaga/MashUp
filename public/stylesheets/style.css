@@ -99,7 +99,7 @@ h1, h2, h3, h4, h5, h6, label {
   margin: 10px auto;
   padding: 5px;
   max-width: 1200px;
-  background: #fffa54;
+  background: #ffffff;
 }
 
 /* This is the class used for the footer */
@@ -156,44 +156,6 @@ header a:hover {
 }
 
 
-/*--------------*/
-
-
-
-/* Form Styles */
-.GO-button {
-  height: 50px;
-  width: 320px;
-  margin: 5% 0;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-}
-
-.GO-button .pure-button {
-  position: absolute;
-  background-color: transparent;
-  color: #000;
-  border: 1px solid #000;
-}
-
-/* vet ikke om vi trenger denne enda */
-.find-adventure-icon{
-  position: absolute;
-  right: 0;
-  width: 35px;
-  height: 35px;
-  background-image: url('/images/random.png');
-  background-size: cover;
-}
-
-.GO-button:hover .find-adventure-icon{
-  transform: rotate(-30deg);
-}
-
-.GO-button .pure-button:hover, .GO-button .pure-button:focus, .GO-button .pure-button:active{
-  background: transparent;
-}
 
 .about {
   text-align: left;
@@ -210,7 +172,7 @@ header a:hover {
   width: 100%;
   text-align: center;
   padding-left: 10px;
-  background: #d32f49;
+  background: #ffffff;
 }
 
 #map {
@@ -237,15 +199,16 @@ header a:hover {
 
 .toogle-wrapper{
   min-width: 300px;
-  background: #fff424;
+  background: #ffffff;
   display: none
 }
 
-.no.result{
+.no-result{
   width: 100%;
-  text-align: center;
+  text-align: left;
   padding-left: 10px;
-  background: #1a2835;
+  background: #ffffff;
+  padding: 10px;
 }
 
 resultHeader {
@@ -300,8 +263,22 @@ resultHeader {
 
 
 
+.search-again-button {
+  height: 40px;
+  width: 220px;
+  margin: 5% 0;
+  padding: 5px;
+  position: relative;
+  overflow: hidden;
+}
 
-
+.search-again-button .pure-button {
+  position: absolute;
+  background-color: rgba(161, 161, 161, 0.78);
+  color: #132b45;
+  border: 2px solid #261f77;
+  padding: 5px;
+}
 
 
 
