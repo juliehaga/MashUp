@@ -85,4 +85,9 @@ router.post('/user-input', function(req, res){
 });
 
 
+router.get('/user-input', function(req, res){
+    res.render('result');
+});
+
+
 module.exports = router;
