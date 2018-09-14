@@ -30,10 +30,7 @@ block append content
                         a.pure-button(href='/find-activities') Search Again
 
             else
-                p #{trailresult}
-
                 for result in trailresult
-                    p #{result}
                     div.title
                         resultHeader !{result.name}
                         div.weather-result

@@ -86,7 +86,7 @@ router.post('/user-input', function(req, res){
 
 
 router.get('/user-input', function(req, res){
-    res.render('result');
+    res.render('find-activities');
 });
 
 
