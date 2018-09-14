@@ -4,28 +4,21 @@
 ############################################################
 
 # Set the base image to Ubuntu
-FROM ubuntu
+FROM node:boron
 
-# File Author / Maintainer
-MAINTAINER Julie Haga
+# Copy app source
+COPY . /src
 
+# Set work directory to /src
+WORKDIR /src
 
-# Install Node.js
-RUN apt-get update
-RUN apt-get install -y curl
-RUN apt install -y curl software-properties-common gnupg
-RUN curl -sL https://deb.nodesource.com/setup_6.x | bash -
-RUN apt-get install --yes nodejs
-RUN apt-get install --yes build-essential
-
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-
-COPY ./ /usr/src/app
-
+# Install app dependencies
 RUN npm install
 
+#Expose port to outside world
 EXPOSE 3000
+
+#start command as per package.json
 CMD [ "npm", "start" ]
 
 
