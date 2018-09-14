@@ -6,6 +6,7 @@ block append head
 block append content
 
 
+
     h3 Showing results for
     div.search-result
         p
@@ -21,6 +22,7 @@ block append content
 
     div.flex-containter
         div.form-wrapper
+
             if(trailresult.length === 0)
                 div.no-result
                     p Sorry, there are no results for your search
@@ -28,15 +30,17 @@ block append content
                         a.pure-button(href='/find-activities') Search Again
 
             else
+                p #{trailresult}
 
                 for result in trailresult
-                    #mapcoords(data-lat='-25.363', data-lng='131.044', data-zoom='5')
-
-                    JSON.stringify(result)
+                    p #{result}
                     div.title
-                        resultHeader #{result.name}
+                        resultHeader !{result.name}
                         div.weather-result
-                            | In #{formData.weatherDay} days time:
+                            if formData.weatherDay === "0"
+                                | Weather today:
+                            else
+                                | In #{formData.weatherDay} days time:
                             | &nbsp;#{result.weatherSummary}
                             br
                             | Temp:
@@ -54,19 +58,13 @@ block append content
                                 span.activity-titles Description:
                                 | &nbsp;#{result.description}
 
-
-
-
-
-
-
-
-
-
         div.map-wrapper
             #map
 
+    script(type='text/javascript').
+        var locationData = !{locationData}
     script(src = "javascripts/results.js")
+
     script(src='https://maps.googleapis.com/maps/api/js?key=AIzaSyDhSugVEeZX0fAPoffFbBz19bGPhR2swmY&callback=drawActivitiesOnMap', async='', defer='')
 
 

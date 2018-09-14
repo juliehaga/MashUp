@@ -74,7 +74,7 @@ router.post('/user-input', function(req, res){
             }
 
 
-            res.render('results', {trailresult: trailAndWeatherData, formData: formData});
+            res.render('results', {trailresult: trailAndWeatherData, formData: formData, locationData: JSON.stringify(trailAndWeatherData)});
 
         });
 

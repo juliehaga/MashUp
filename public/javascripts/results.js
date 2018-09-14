@@ -1,8 +1,7 @@
-
 function drawActivitiesOnMap() {
     map = new google.maps.Map(document.getElementById('map'), {
         center: {lat: -34.397, lng: 150.644},
-        zoom: 6
+        zoom: 10
     });
     let infoWindow = new google.maps.InfoWindow;
     if (navigator.geolocation) {
@@ -24,14 +23,21 @@ function drawActivitiesOnMap() {
         // Browser doesn't support Geolocation
         handleLocationError(false, infoWindow, map.getCenter());
     }
-    let myLatLng = {lat: parseFloat(document.getElementById("mapcoords").getAttribute("data-lat")), lng: parseFloat(document.getElementById("mapcoords").getAttribute("data-lng"))};
 
-    console.log(myLatLng);
-    let marker = new google.maps.Marker({
-        position: myLatLng,
-        map: map,
-        title: 'Hello World!'
-    });
+
+    for (i = 0; i < locationData.length; i++) {
+        let myLatLng = {lat: locationData[i].lat, lng: locationData[i].lng};
+        let marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: locationData[i].name
+        });
+
+    }
+
+
+
+
 
 }
 
