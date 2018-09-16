@@ -1,8 +1,26 @@
 var unirest = require("unirest");
 //https://developers.google.com/maps/documentation/geocoding/intro#place-id
 
-let constructGeocodeURL = function(street, suburb, zip, country) {
-    let query = suburb+"&"+street+"&"+zip+"&"+country;
+let constructGeocodeURL = function(parameterlist) {
+    let query = "";
+    numParam = 0;
+    for (var i=0; i < parameterlist.length; i++){
+        if (parameterlist[i] !== "")  {
+
+            if (numParam > 0)  {
+                query += "&"
+            }
+            console.log(parameterlist[i])
+            query += parameterlist[i];
+            numParam ++;
+        }
+    }
+
+
+
+
+    console.log("Making geocall for ");
+    console.log(query);
     if (query instanceof Error) {
         return new Error("geocode API request url could not be constructed", query);
     }
@@ -17,8 +35,8 @@ let constructGeocodeURL = function(street, suburb, zip, country) {
 
 exports.findCoordinates = function(street, city, zip, country)  {
     return new Promise(function(resolve, reject) {
-
-        unirest.get(constructGeocodeURL(street, city, zip, country))
+        parameterList = [street, city, zip, country];
+        unirest.get(constructGeocodeURL(parameterList))
             .end(function (result) {
                 if (result.error) {
                     console.log("Geocoding API failed");
@@ -28,5 +46,4 @@ exports.findCoordinates = function(street, city, zip, country)  {
                 }
             });
     })
-};
-
+}
