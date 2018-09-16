@@ -10,7 +10,9 @@ let constructGeocodeURL = function(parameterlist) {
             if (numParam > 0)  {
                 query += "&"
             }
-            console.log(parameterlist[i])
+            console.log(parameterlist[i]);
+            let str = parameterlist[i] ;
+            str = str.replace(/\s+/g, '-').toLowerCase();
             query += parameterlist[i];
             numParam ++;
         }
