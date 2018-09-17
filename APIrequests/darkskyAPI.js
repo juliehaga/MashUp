@@ -1,8 +1,7 @@
 var unirest = require("unirest");
 
 
-
-function construckDarkskyQuery(location){
+function constructkDarkskyQuery(location){
     let query = '';
     if (location.hasOwnProperty("lat") && location.hasOwnProperty("lng") && location.hasOwnProperty("time")) {
         query += location.lat + "," + location.lng + "," + location.time;
@@ -14,7 +13,7 @@ function construckDarkskyQuery(location){
 
 
 let constructDarkSkyRequestURL = function(location) {
-    let query = construckDarkskyQuery(location);
+    let query = constructkDarkskyQuery(location);
     if (query instanceof Error) {
         return new Error("DarkSky API request url could not be constructed", query);
     }
@@ -29,13 +28,8 @@ let constructDarkSkyRequestURL = function(location) {
 
 
 
-
-
-
 exports.darkSkyAPIRequest = function(location)  {
     return new Promise(function(resolve, reject) {
-
-        // These code snippets use an open-source library. http://unirest.io/nodejs
 
         unirest.get(constructDarkSkyRequestURL(location))
             .end(function (result) {

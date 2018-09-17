@@ -1,21 +1,20 @@
 var unirest = require("unirest");
 
+
 let constructGeocodeURL = function(parameterlist) {
     let query = "";
-    numParam = 0;
+    firstParameter = true;
     for (var i=0; i < parameterlist.length; i++){
         if (parameterlist[i] !== "")  {
-            if (numParam > 0)  {
+            if (firstParameter === false)  {
                 query += "&"
             }
-            console.log(parameterlist[i]);
-            let str = parameterlist[i] ;
+            let str = parameterlist[i];
             str = str.replace(/\s+/g, '-').toLowerCase();
             query += parameterlist[i];
-            numParam ++;
+            firstParameter = false;
         }
     }
-    console.log("Making geocall for ");
     console.log(query);
     if (query instanceof Error) {
         return new Error("geocode API request url could not be constructed", query);

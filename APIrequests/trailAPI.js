@@ -50,8 +50,6 @@ var processTrailData = function (requestData) {
             activities.push(activity);
         }catch(error) {
             console.error("Invalid data from API");
-            // expected output: SyntaxError: unterminated string literal
-            // Note - error messages will vary depending on browser
         }
 
 
@@ -64,8 +62,6 @@ var processTrailData = function (requestData) {
 
 exports.trailAPIRequest = function(requestData)  {
     return new Promise(function(resolve, reject) {
-
-    // These code snippets use an open-source library. http://unirest.io/nodejs
 
     unirest.get(constructTrailAPIRequestURL(requestData))
         .header("X-Mashape-Key", "JCOm6HzntkmshkTLOE6Omng73CKap1Xh0cdjsnhhOk5IdC253g")
