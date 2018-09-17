@@ -1,9 +1,8 @@
 var express = require('express');
 var router = express.Router();
-var trailAPI = require('../backend/trailAPI');
-var darkskyAPI = require('../backend/darkskyAPI');
-var processResults = require('../backend/processResults');
-var geocoding = require('../backend/geocoding');
+var trailAPI = require('../APIrequests/trailAPI');
+var darkskyAPI = require('../APIrequests/darkskyAPI');
+var geocoding = require('../APIrequests/geocoding');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -34,8 +33,7 @@ router.post('/user-input', function(req, res){
             console.log(formData)
 
             trailAPI.trailAPIRequest(formData).then(function whenOk(response) {
-                console.log("--------------Trail API call--------------")
-                response = processResults.processTrailData(JSON.stringify(response));
+                response = trailAPi.processTrailData(JSON.stringify(response));
 
                 response = response.filter(function (activity) {
                     return activity.activity.trim().toLowerCase().replace(/\s+/g, '') === formData.activityType;
@@ -87,7 +85,7 @@ router.post('/user-input', function(req, res){
 
         trailAPI.trailAPIRequest(formData).then(function whenOk(response) {
             console.log("--------------Trail API call--------------")
-            response = processResults.processTrailData(JSON.stringify(response));
+            response = trailAPI.processTrailData(JSON.stringify(response));
 
             response = response.filter(function (activity) {
                 return activity.activity.trim().toLowerCase().replace(/\s+/g, '') === formData.activityType;

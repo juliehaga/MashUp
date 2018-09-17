@@ -38,3 +38,28 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
     infoWindow.open(map);
 }
 
+
+function drawActivitiesOnMap() {
+    map = new google.maps.Map(document.getElementById('map'), {
+        center: {lat: -34.397, lng: 150.644},
+        zoom: 6
+    });
+    let infoWindow = new google.maps.InfoWindow;
+
+    var pos = {
+        lat: locationData[0].lat,
+        lng: locationData[0].lng
+    };
+
+    map.setCenter(pos);
+
+    for (i = 0; i < locationData.length; i++) {
+        let myLatLng = {lat: locationData[i].lat, lng: locationData[i].lng};
+        let marker = new google.maps.Marker({
+            position: myLatLng,
+            map: map,
+            title: locationData[i].name
+        });
+
+    }
+}

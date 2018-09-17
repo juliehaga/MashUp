@@ -6,7 +6,6 @@ let constructGeocodeURL = function(parameterlist) {
     numParam = 0;
     for (var i=0; i < parameterlist.length; i++){
         if (parameterlist[i] !== "")  {
-
             if (numParam > 0)  {
                 query += "&"
             }

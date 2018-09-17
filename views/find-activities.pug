@@ -22,7 +22,7 @@ block append content
                         br
                         input(type='text', name='street', value = '')
                         br
-                        | Suburb:
+                        | Suburb/City:
                         br
                         input(type='text', name='suburb', value = '')
                         br
@@ -55,7 +55,7 @@ block append content
                     br
                     input(type='number', name='limit', value='20')
                     br
-                    | Only show results with good weather
+                    | Only show results with clear weather
                     input(type='checkbox', name = 'goodWeather',onclick='showGoodWeatherSearch(this);')
                     br
                     div.toogle-wrapper(id = "toogle-weather")
