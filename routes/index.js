@@ -33,7 +33,7 @@ router.post('/user-input', function(req, res){
             console.log(formData)
 
             trailAPI.trailAPIRequest(formData).then(function whenOk(response) {
-                response = trailAPi.processTrailData(JSON.stringify(response));
+                response = trailAPI.processTrailData(JSON.stringify(response));
 
                 response = response.filter(function (activity) {
                     return activity.activity.trim().toLowerCase().replace(/\s+/g, '') === formData.activityType;

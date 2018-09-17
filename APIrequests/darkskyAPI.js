@@ -1,6 +1,3 @@
-let latitude= "-27.47";
-let longitude = "153";
-
 var unirest = require("unirest");
 
 

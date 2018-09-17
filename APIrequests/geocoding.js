@@ -1,5 +1,4 @@
 var unirest = require("unirest");
-//https://developers.google.com/maps/documentation/geocoding/intro#place-id
 
 let constructGeocodeURL = function(parameterlist) {
     let query = "";
@@ -16,10 +15,6 @@ let constructGeocodeURL = function(parameterlist) {
             numParam ++;
         }
     }
-
-
-
-
     console.log("Making geocall for ");
     console.log(query);
     if (query instanceof Error) {
